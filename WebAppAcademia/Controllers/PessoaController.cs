@@ -9,7 +9,17 @@ namespace WebAppAcademia.Controllers
         // GET: PessoaController
         public ActionResult Index()
         {
-            return View(new PessoaModel());
+            return View(new PessoaModel()
+            {
+                Id = 1,
+                NomeCompleto = "Um dois três de Oliveira Quatro",
+                PrimeiroNome = "Um dois três",
+                Sobrenome = "de Oliveira Quatro",
+                Email = "oliveira4@outlook.com",
+                Login = "123oliveira4",
+                DataNascimento = DateTime.Now,
+                QuantidadeFilhos = 0
+            });
         }
 
         // GET: PessoaController/Details/5
