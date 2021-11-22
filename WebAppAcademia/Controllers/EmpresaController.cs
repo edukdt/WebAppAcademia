@@ -10,9 +10,9 @@ namespace WebAppAcademia.Controllers
         {
             return View();
         }
-        public ActionResult Incluir()
+        public ActionResult Cadastrar()
         {
-            return View("Incluir");
+            return View();
         }
         public ActionResult Editar()
         {
@@ -28,14 +28,15 @@ namespace WebAppAcademia.Controllers
                 QuantidadeFilhos = 0
             });
         }
+
         // POST: EmpresaController/Create
-        [HttpGet]
+        [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(IFormCollection collection)
         {
             try
             {
-                return RedirectToAction("Home");
+                return View("Home");
             }
             catch
             {

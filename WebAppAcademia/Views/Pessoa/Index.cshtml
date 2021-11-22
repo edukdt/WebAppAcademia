@@ -1,4 +1,7 @@
-﻿@model PessoaModel
+﻿@{
+	ViewData["Title"] = "Inclusão de Pessoa";
+}
+@model PessoaModel
 
 <div class="container">
       <div class="row">
@@ -8,7 +11,7 @@
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="firstName">First name</label>
-                <input type="text" class="form-control" id="firstName" placeholder="" value="@Model.NomeCompleto" required="">
+                <input type="text" class="form-control" id="firstName" placeholder="" value="@Model.PrimeiroNome" required="">
                 <div class="invalid-feedback">
                   Valid first name is required.
                 </div>
@@ -45,11 +48,21 @@
 
             <div class="mb-3">
               <label for="address">Data de Nascimento</label>
-              <input type="text" class="form-control" id="address" placeholder="dd/MM/yyyy" value="@Model.DataNascimento" required="">
+              <input type="text" class="form-control" id="address" placeholder="dd/MM/yyyy" value="@Model.DataNascimento.ToShortDateString()" required="">
               <div class="invalid-feedback">
                 Data de Nascimento
               </div>
             </div>
+
+            
+              <div class="mb-3">
+                <label for="QuantidadeFilhos">Quantidade de filhos</label>
+                <input type="text" class="form-control" id="QuantidadeFilhos" placeholder="" value="@Model.QuantidadeFilhos" required="">
+                <div class="invalid-feedback">
+                  Valid last name is required.
+                </div>
+              </div>
+
             <hr class="mb-4">
             <button class="btn btn-primary btn-lg btn-block"  value="Create" type="submit">Cadastrar</button>
           </form>
